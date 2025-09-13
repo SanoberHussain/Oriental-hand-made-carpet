@@ -22,44 +22,44 @@
 <body class="bg-black text-[#ecd6ab] min-h-screen">
   <!-- Navbar -->
 <nav class="absolute top-0 left-0 w-full bg-[#22170f]/20 backdrop-blur-md shadow-md 
-            flex items-center px-8 py-6 z-10">
+            flex items-center px-4 md:px-8 py-4 md:py-6 z-10">
   <!-- Left Logo -->
-  <div class="flex flex-col mr-20">
-    <span class="font-playfair text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span> <br>
+  <div class="flex flex-col mr-4 md:mr-20">
+    <span class="font-playfair text-xl md:text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span> <br>
     <span class="uppercase font-semibold text-xs text-[#ecd6ab]">Handmade Carpets</span>
   </div>
   <!-- Baaki content right side push -->
-  <div class="flex items-center ml-auto space-x-90">
-    <!-- Menu -->
-    <ul class="flex space-x-10 text-lg items-center">
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-base">HOME</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-base">ABOUT</a></li>
-      <li><a href="orientalrugs.html" class="hover:text-[#a38654] transition font-bold text-base">COLLECTIONS</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-base">AREAS COVERED</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-base">INTERIOR DESIGNERS</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-base">CONTACTS</a></li>
+  <div class="flex items-center ml-auto">
+    <!-- Menu - Hidden on mobile, visible on desktop -->
+    <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
+      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
+      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
+      <li><a href="orientalrugs.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
+      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
+      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">INTERIOR DESIGNERS</a></li>
+      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
     </ul>
     <!-- Right Button + Icon -->
-      <button onclick="window.open('signup.html', '_blank')" class=" ml-10 px-4 py-2 rounded font-semibold uppercase text-sm tracking-wider shadow border border-[#ecd6ab] text-[#ecd6ab] hover:bg-[#ecd6ab30] transition">
+      <button onclick="window.open('signup.html', '_blank')" class="ml-2 md:ml-10 px-3 md:px-4 py-2 rounded font-semibold uppercase text-xs md:text-sm tracking-wider shadow border border-[#ecd6ab] text-[#ecd6ab] hover:bg-[#ecd6ab30] transition">
         Create Account
       </button>
       </div>
 </nav>
   <!-- Hero Section -->
- <section class="relative h-[850px] min-h-[300px] flex items-center justify-end">
+ <section class="relative h-[600px] md:h-[850px] min-h-[300px] flex items-center justify-center md:justify-end">
   <!-- Background Image: replace with your image path -->
   <img src="assets/shutterstock_1271989258.jpg" 
        class="absolute left-0 top-20 h-full w-full object-center object-cover brightness-75" 
        alt="Rug Banner" /> 
   <div class="absolute inset-0 custom-overlay"></div>
-  <div class="relative z-10 max-w-xl mr-27 py-12 px-8 bg-transparent text-left">
-    <h1 class="font-playfair text-5xl font-bold tracking-tight leading-tight text-[#ecd6ab] drop-shadow">
-      ORIENTAL <br> HANDMADE CARPETS <br>  FOR LUXARY HOMES
+  <div class="relative z-10 max-w-xl md:mr-27 py-8 md:py-12 px-4 md:px-8 bg-transparent text-center md:text-left">
+    <h1 class="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-[#ecd6ab] drop-shadow">
+      ORIENTAL <br> HANDMADE CARPETS <br>  FOR LUXURY HOMES
     </h1>
-    <p class="mt-4 text-base text-[#ecd6a]  " >
+    <p class="mt-4 text-sm md:text-base text-[#ecd6ab]" >
       Contemporary and traditional styles, handwoven by master artisans. Visit our showroom for a free expert consultation.
     </p>
-    <button class="mt-6 border border-[#ecd6ab] text-[#ecd6ab] px-8 py-2 font-semibold rounded hover:bg-[#22170f]/70 transition">
+    <button class="mt-6 border border-[#ecd6ab] text-[#ecd6ab] px-4 md:px-8 py-2 font-semibold rounded hover:bg-[#22170f]/70 transition text-sm md:text-base">
       BOOK A VISIT TO OUR SHOWROOM
     </button>
   </div>
@@ -68,25 +68,25 @@
 
 
   <!-- Feature Boxes -->
- <section class="relative z-20 flex justify-between space-x-6 -mt-40  px-10">
-  <div class="flex-1 h-30 bg-[#22170f]/70 rounded-b-xl px-5 py-7 shadow-lg">
-    <h3 class="font-playfair text-lg font-bold mb-2 text-[#ecd6ab]">Quality</h3>
-    <p class="text-sm text-[#e8d6b8]">Oriental carpets are mainly made from sheep’s wool, whose quality varies by breed, climate, altitude, and shearing practices. Wool quality depends on its location on the sheep and whether it’s from spring or autumn shearing. Dyes also influence quality, as their source, composition, and application determine the richness and fastness of
+ <section class="relative z-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 -mt-48 md:-mt-56 lg:-mt-64 px-4 md:px-10">
+  <div class="flex-1 bg-[#22170f]/70 rounded-b-xl px-4 md:px-5 py-6 md:py-7 shadow-lg">
+    <h3 class="font-playfair text-base md:text-lg font-bold mb-2 text-[#ecd6ab]">Quality</h3>
+    <p class="text-xs md:text-sm text-[#e8d6b8]">Oriental carpets are mainly made from sheep’s wool, whose quality varies by breed, climate, altitude, and shearing practices. Wool quality depends on its location on the sheep and whether it’s from spring or autumn shearing. Dyes also influence quality, as their source, composition, and application determine the richness and fastness of
      colors.</p>
   </div>
   <div class="flex-1 bg-[#22170f]/70 rounded-b-xl px-5 py-7 shadow-lg">
-    <h3 class="font-playfair text-lg font-bold mb-2 text-[#ecd6ab]">Design</h3>
-    <p class="text-sm text-[#e8d6b8]">Oriental carpet designs are created by varying the colors of hand-tied wool knots, resulting in countless motifs and patterns. Broadly, they are classified as rectilinear (bold, geometric forms, coarsely woven by villages/nomads) or curvilinear (intricate, fluid floral patterns requiring fine weave). Despite the variety, all share striking similarities across history and 
+    <h3 class="font-playfair text-base md:text-lg font-bold mb-2 text-[#ecd6ab]">Design</h3>
+    <p class="text-xs md:text-sm text-[#e8d6b8]">Oriental carpet designs are created by varying the colors of hand-tied wool knots, resulting in countless motifs and patterns. Broadly, they are classified as rectilinear (bold, geometric forms, coarsely woven by villages/nomads) or curvilinear (intricate, fluid floral patterns requiring fine weave). Despite the variety, all share striking similarities across history and 
     origin.</p>
   </div>
   <div class="flex-1 bg-[#22170f]/70 rounded-b-xl px-5 py-7 shadow-lg">
-    <h3 class="font-playfair text-lg font-bold mb-2 text-[#ecd6ab]">Patterns</h3>
-    <p class="text-sm text-[#e8d6b8]">Carpet designs are organized either as a single central motif or as repeating patterns across the field. The most common is the medallion design, with a central figure and matching corners. Repeating patterns may include lozenge shapes with floral figures and “fish” motifs. Some, like Chakhansur rugs, stand out with bright colors and Turkmen-inspired 
+    <h3 class="font-playfair text-base md:text-lg font-bold mb-2 text-[#ecd6ab]">Patterns</h3>
+    <p class="text-xs md:text-sm text-[#e8d6b8]">Carpet designs are organized either as a single central motif or as repeating patterns across the field. The most common is the medallion design, with a central figure and matching corners. Repeating patterns may include lozenge shapes with floral figures and “fish” motifs. Some, like Chakhansur rugs, stand out with bright colors and Turkmen-inspired 
     designs.</p>
   </div>
   <div class="flex-1 bg-[#22170f]/70 rounded-b-xl px-5 py-7 shadow-lg">
-    <h3 class="font-playfair text-lg font-bold mb-2 text-[#ecd6ab]">Regions</h3>
-    <p class="text-sm text-[#e8d6b8]">Carpet designs may feature a single central motif or repeating patterns. The most common is the medallion design, with a central figure and corner elements. Others use lozenge shapes with floral and “fish” motifs repeated throughout. Some, like Chakhansur rugs, are unique for their bright colors and Turkmen-inspired 
+    <h3 class="font-playfair text-base md:text-lg font-bold mb-2 text-[#ecd6ab]">Regions</h3>
+    <p class="text-xs md:text-sm text-[#e8d6b8]">Carpet designs may feature a single central motif or repeating patterns. The most common is the medallion design, with a central figure and corner elements. Others use lozenge shapes with floral and “fish” motifs repeated throughout. Some, like Chakhansur rugs, are unique for their bright colors and Turkmen-inspired 
     patterns.</p>
   </div>
 </section>
@@ -109,63 +109,66 @@
         <div class="px-6 pb-5">
           <h3 class="font-playfair text-xl font-bold text-[#6d4c24] mb-2">Oriental</h3>
           <p class="text-[#5b4a31] text-base">
-          Carpets hand-knotted by master artisans featuring intricate designs that showcase a rich cultural heritage.
-          </p>
+            Our meticulously hand-knotted oriental carpets are created through a process defined by mastery and fineness. Carefully selected designs from history, a reflection of masterpieces created centuries ago. Pure collector’s items for art lovers and connoisseurs. </p>
         </div>
       </a>
     </div>
 <!-- Contemporary -->
     <div class="bg-[#f9f5ee] rounded-lg overflow-hidden shadow group">
-      
-      <img src="assets/shutterstock_44717353.jpg" 
-           alt="Contemporary Rugs" 
-           class="w-full h-72 object-cover mb-4 transform transition duration-500 group-hover:scale-110">
-      <div class="px-6 pb-5">
-        <h3 class="font-playfair text-xl font-bold text-[#6d4c24] mb-2">Contemporary</h3>
-        <p class="text-[#5b4a31] text-base">
-         Our ‘Contemporary’ collection reflects designs and aesthetics characterized by modernity, elegance,
-          and beautiful patterns. Carefully selected muted tones and minimal patterns in our ‘Contemporary’ collection create calmness,
-           sophistication, and timelessness, evoking tranquility and elegance, and making spaces feel
-        </p>
-      </div>
+      <a href="contemporary.html" class="block">
+        <img src="assets/shutterstock_44717353.jpg" 
+             alt="Contemporary Rugs" 
+             class="w-full h-72 object-cover mb-4 transform transition duration-500 group-hover:scale-110">
+        <div class="px-6 pb-5">
+          <h3 class="font-playfair text-xl font-bold text-[#6d4c24] mb-2">Contemporary</h3>
+          <p class="text-[#5b4a31] text-base">
+           Our 'Contemporary' collection reflects designs and aesthetics characterized by modernity, elegance,
+            and beautiful patterns. Carefully selected muted tones and minimal patterns in our 'Contemporary' collection create calmness,
+             sophistication, and timelessness, evoking tranquility and elegance, and making spaces feel
+          </p>
+        </div>
+      </a>
     </div>
-<!-- Modern -->
+<!-- Tribal -->
     <div class="bg-[#f9f5ee] rounded-lg overflow-hidden shadow group">
-      <img src=" assets/shutterstock_2147163051.jpg" 
-           alt="Southwestern Rugs" 
-           class="w-full h-72 object-cover mb-4 transform transition duration-500 group-hover:scale-110">
-      <div class="px-6 pb-5">
-        <h3 class="font-playfair text-xl font-bold text-[#6d4c24] mb-2">Tribal</h3>
-        <p class="text-[#5b4a31] text-base">
-          traditions, and artistic expression of specific tribes of the ‘Rug Belt’. Our ‘Tribal carpet collection’
-           features geometric motifs and repetitive patterns with designs and color palettes passed down through generations, 
-           through the weaving process done mostly from memory rather than using patterns on paper.
-        </p>
-      </div>
+      <a href="tribal.html" class="block">
+        <img src="assets/shutterstock_2147163051.jpg" 
+             alt="Tribal Rugs" 
+             class="w-full h-72 object-cover mb-4 transform transition duration-500 group-hover:scale-110">
+        <div class="px-6 pb-5">
+          <h3 class="font-playfair text-xl font-bold text-[#6d4c24] mb-2">Tribal</h3>
+          <p class="text-[#5b4a31] text-base">
+            traditions, and artistic expression of specific tribes of the 'Rug Belt'. Our 'Tribal carpet collection'
+             features geometric motifs and repetitive patterns with designs and color palettes passed down through generations, 
+             through the weaving process done mostly from memory rather than using patterns on paper.
+          </p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- Areas Covered Section -->
-<section class="relative w-full h-[480px] flex items-center justify-center">
+<section class="relative w-full h-[480px] overflow-hidden">
   <!-- Background Image -->
-  <img src="assets/shutterstock_1172733337.jpg" class="absolute inset-0 w-full h-full object-cover object-center brightness-75" alt="Areas Covered Background" />
+  <div 
+    class="absolute inset-0 bg-cover bg-center bg-fixed" 
+    style="background-image: url('https://www.afghancarpet.com/cdn/shop/files/DRZ_7560-scaled.jpg?v=1665567922');">
+  </div>
 
-  <!-- Overlay card -->
-  <div class="relative z-10 bg-white bg-opacity-90 rounded-lg shadow-lg p-10 max-w-xl mx-auto text-center">
-    <!-- Decorative Top Icon (SVG, optional) -->
-    <div class="flex items-center justify-center mb-4">
-      <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-        <path d="M18 34c8.836 0 16-7.164 16-16S26.836 2 18 2 2 9.164 2 18s7.164 16 16 16Z" stroke="#a38654" stroke-width="2"/>
-      </svg>
-    </div>
-    <h2 class="font-playfair text-4xl font-bold text-[#6d4c24] mb-4">Areas Covered</h2>
-    <p class="text-[#22170f] text-base mb-6">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl text-center px-4 md:px-6 lg:px-16 mx-auto flex flex-col items-center justify-center h-full">
+    <h2 class="font-playfair text-2xl md:text-3xl lg:text-4xl font-bold text-[#ecd6ab] mb-4">Areas Covered</h2>
+    <p class="text-[#ecd6ab] text-sm md:text-base mb-6 max-w-2xl">
       Our beautiful showroom located in Evergreen, Colorado showcasing over 1,000 rugs from around the world is easily accessible from Denver, Arvada, Cherry Creek, the surrounding areas and foothills. We offer door to door shipping to all 50 US States.
-    </p>
-    <button class="border border-[#a38654] px-6 py-2 font-semibold uppercase text-sm rounded text-[#a38654] hover:bg-[#a38654]/10 transition">
-      Book My Visit
-    </button>
+    </p><br><br>
+    <a href="https://afghancarpet.com/collections/all?sort_by=created-descending" 
+       class="inline-block px-4 md:px-6 py-2 md:py-3 border-2 border-[#ecd6ab] text-[#ecd6ab] font-semibold transition duration-300 hover:bg-[#ecd6ab] hover:text-[#6d4c24] rounded-lg text-sm md:text-base">
+      Shop Now →
+    </a>
   </div>
 </section>
 

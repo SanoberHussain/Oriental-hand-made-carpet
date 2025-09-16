@@ -11,6 +11,10 @@
     .font-playfair {
       font-family: 'Playfair Display', serif;
     }
+    /* Zoom effect for cards */
+    #rugsGrid .relative { overflow: hidden; }
+    #rugsGrid img { transition: transform 0.5s ease; }
+    #rugsGrid .relative:hover img { transform: scale(1.2); }
   </style>
 </head>
 <body>
@@ -19,19 +23,41 @@
       <span class="font-playfair text-xl md:text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span>
       <span class="uppercase font-semibold text-xs text-[#ecd6ab]">Handmade Carpets</span>
     </div>
-    <div class="flex items-center ml-auto">
-      <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
-        <li><a href="index.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">INTERIOR DESIGNERS</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
-      </ul>
-      <button id="viewCollectionsBtn" class="ml-2 md:ml-10 px-3 md:px-4 py-2 rounded font-semibold uppercase text-xs md:text-sm tracking-wider shadow border border-[#ecd6ab] text-[#ecd6ab] hover:bg-[#ecd6ab30] transition">
-        View Collections
-      </button>
-    </div>
+ <!--  content right side push -->
+ <div class="flex items-center ml-auto">
+  <!-- Menu - Hidden on mobile, visible on desktop -->
+  <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
+    <li><a href="orientalrugs.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
+  </ul>
+  <!-- Icons Section -->
+<div class="flex items-center space-x-6 text-[#ecd6ab] ml-12">
+  <!-- Create Account Logo with Tooltip -->
+  <div class="relative group">
+    <a href="signup.html" target="_blank" class="hover:opacity-80 transition">
+      <img src="assets/icons8-login-24.png" alt="Create Account" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Login
+    </span>
+  </div>
+    <!-- Cart Logo with Tooltip -->
+  <div class="relative group">
+    <a href="#" class="hover:opacity-80 transition">
+      <img src="assets/icons8-cart-64.png" alt="Cart Icon" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Cart
+    </span>
+  </div>
+</div>
+
+</div>
   </nav>
 
   <div class="flex flex-col max-w-[1400px] mx-auto mt-20 md:mt-100 px-4 md:px-6">
@@ -54,7 +80,7 @@
          Our selected Tribal rug patterns are predominantly geometric, featuring distinct symbols that carry deep cultural significance. These motifs have a more abstract, geometric, and stylized look, made from locally sourced sheep's wool, goat hair, and cotton, known for their durability and dyed with natural dyes made from plants and minerals, resulting in rich, earthy, and sometimes variegated colors.
 The color palette in our Tribal collection features warm,  rich tones, especially deep reds, browns, rust, and blues, with accents of ivory, green, and yellow.  Woven for general use, such as floor coverings, decorating walls, and bedding. Their special feature is their smaller size, which is more manageable, reflecting the nomadic lifestyle.
             </p>
-          <button id="viewCollectionsBtnMobile" class="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-red-800 transition mt-4">View Collections</button>
+          <button id="viewCollectionsBtnMobile" class="bg-black text-white px-5 py-2.5 rounded-md shadow-md transition transform hover:scale-105 hover:bg-red-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300 active:scale-95 mt-4">View Collections</button>
         </div>
         <div class="relative flex flex-col sm:flex-row items-center justify-center gap-6">
           <img src="oriental background removee/oimg2.png" alt="Tribal Rug 1" class="w-40 sm:w-52 md:w-60 h-auto rounded-md shadow-lg" />

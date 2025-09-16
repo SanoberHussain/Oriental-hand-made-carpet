@@ -30,26 +30,47 @@
 <nav class="absolute top-0 left-0 w-full bg-[#22170f]/20 backdrop-blur-md shadow-md 
             flex items-center px-4 md:px-8 py-4 md:py-6 z-10">
   <!-- Left Logo -->
-  <div class="flex flex-col mr-4 md:mr-20">
-    <span class="font-playfair text-xl md:text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span> <br>
-    <span class="uppercase font-semibold text-xs text-[#ecd6ab]">Handmade Carpets</span>
+    <div class="flex flex-col mr-4 md:mr-20">
+      <span class="font-playfair text-xl md:text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span>
+      <span class="uppercase font-semibold text-xs text-[#ecd6ab]">Handmade Carpets</span>
+    </div>
+  <!--  content right side push -->
+ <div class="flex items-center ml-auto">
+  <!-- Menu - Hidden on mobile, visible on desktop -->
+  <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
+    <li><a href="#collections" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
+  </ul>
+  <!-- Icons Section -->
+<div class="flex items-center space-x-6 text-[#ecd6ab] ml-12">
+  <!-- Create Account Logo with Tooltip -->
+  <div class="relative group">
+    <a href="signup.html" target="_blank" class="hover:opacity-80 transition">
+      <img src="assets/icons8-login-24.png" alt="Create Account" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Login
+    </span>
   </div>
-  <!-- Baaki content right side push -->
-  <div class="flex items-center ml-auto">
-    <!-- Menu - Hidden on mobile, visible on desktop -->
-    <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
-     <li><a href="orientalrugs.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
-     <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
-      <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
-    </ul>
-    <!-- Right Button + Icon -->
-      <button onclick="window.open('signup.html', '_blank')" class="ml-2 md:ml-10 px-3 md:px-4 py-2 rounded font-semibold uppercase text-xs md:text-sm tracking-wider shadow border border-[#ecd6ab] text-[#ecd6ab] hover:bg-[#ecd6ab30] transition">
-        Create Account
-      </button>
-      </div>
+    <!-- Cart Logo with Tooltip -->
+  <div class="relative group">
+    <a href="#" class="hover:opacity-80 transition">
+      <img src="assets/icons8-cart-64.png" alt="Cart Icon" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Cart
+    </span>
+  </div>
+</div>
+
+</div>
 </nav>
+
   <!-- Hero Section -->
  <section class="relative h-[600px] md:h-[850px] min-h-[300px] flex items-center justify-center md:justify-end">
   <!-- Background Image: replace with your image path -->
@@ -100,7 +121,7 @@
 
 
 <!-- Collections Section -->
-<section class="relative z-10 px-5 py-16 bg-white text-[#22170f] ">
+<section id="collections" class="relative z-10 px-5 py-16 bg-white text-[#22170f] ">
   <div class="text-center mb-12">
     <h2 class="font-playfair text-4xl font-bold text-[#6d4c24] tracking-tight mb-3">Collections</h2>
     <p class="max-w-2xl mx-auto text-base text-[#5b4a31]">
@@ -173,10 +194,13 @@
     <p class="text-[#ecd6ab] text-sm md:text-base mb-6 max-w-2xl">
    Our most sought-after handmade carpets, crafted for exquisite drawing rooms, living rooms, are made through a painstaking hand-knotting process by master artisans, taking months to complete, using the finest and premium wool and silk to enhance their beauty and longevity.
   </p><br><br>
-    <a href="https://afghancarpet.com/collections/all?sort_by=created-descending" 
-       class="inline-block px-4 md:px-6 py-2 md:py-3 border-2 border-[#ecd6ab] text-[#ecd6ab] font-semibold transition duration-300 hover:bg-[#ecd6ab] hover:text-[#6d4c24] rounded-lg text-sm md:text-base">
-      Shop Now →
-    </a>
+   <a href="area-covered.html"
+   class="block px-6 md:px-8 py-2.5 md:py-3 border-2 border-[#ecd6ab] 
+          text-[#ecd6ab] font-semibold rounded-lg text-sm md:text-base 
+          transition duration-300 ease-in-out 
+          hover:bg-[#ecd6ab] hover:text-[#6d4c24]">
+  Shop Now →
+</a>
   </div>
 </section>
 
@@ -202,8 +226,8 @@
       </h3>
       <!-- Text -->
       <p class="text-[#5b4a31] italic">
-        Free shipping on all orders in the United States, and free shipping to Europe, 
-        Australia, Asia, South America, and the rest of the world on all orders over $1,000 USD.
+      Free shipping on all orders to the United States, Europe, Australia, Asia, South America, and the rest of the world on all orders 
+      over $5,000 USD
       </p>
     </div>
 
@@ -220,8 +244,8 @@
       </h3>
       <!-- Text -->
       <p class="text-[#5b4a31] italic">
-        If you aren’t delighted with your heirloom rug, we provide simple returns 
-        and exchanges within 7 days of purchase.
+        If you aren’t delighted with your selected carpet, we provide simple returns 
+        or exchanges within 7 days of purchase.
       </p>
     </div>
 
@@ -337,8 +361,81 @@
     <div class="text-gray-600 text-sm">Shipping & Delivery</div>
   </div>
 </div>
-
 </section>
+
+  <!-- Floating Chat Button -->
+  <button id="chat-toggle" aria-label="Open chat"
+          class="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-[#a38654] text-[#ecd6ab] shadow-lg flex items-center justify-center hover:bg-[#7c5c34] transition">
+    <!-- Simple chat bubble icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+      <path d="M2.25 12c0-4.97 4.66-9 10.4-9s10.4 4.03 10.4 9-4.66 9-10.4 9c-1.2 0-2.36-.17-3.45-.5-.37-.11-.77-.07-1.1.12l-3.1 1.8c-.86.5-1.9-.27-1.72-1.25l.48-2.62c.06-.35-.03-.71-.24-.98C2.87 15.58 2.25 13.85 2.25 12z"/>
+    </svg>
+  </button>
+
+  <!-- Chat Panel -->
+  <div id="chat-panel" class="fixed bottom-24 right-6 z-40 w-80 h-96 bg-white text-[#22170f] rounded-xl shadow-2xl hidden flex flex-col overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between bg-[#6d4c24] text-[#ecd6ab] px-4 py-3">
+      <div class="font-semibold">Chat with us</div>
+      <button id="chat-close" aria-label="Close chat" class="text-[#ecd6ab] hover:text-white">✕</button>
+    </div>
+    <!-- Messages Area -->
+    <div id="chat-messages" class="flex-1 p-3 overflow-y-auto space-y-2 bg-[#f9f5ee]">
+      <div class="text-xs text-[#5b4a31]">How can we help you today?</div>
+    </div>
+    <!-- Input Area -->
+    <form id="chat-form" class="border-t border-[#e5decf] flex items-center gap-2 p-2 bg-white">
+      <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 px-3 py-2 rounded border border-[#d7cbb5] text-[#22170f] focus:outline-none" />
+      <button type="submit" class="px-3 py-2 bg-[#a38654] text-[#ecd6ab] rounded hover:bg-[#7c5c34]">Send</button>
+    </form>
+  </div>
+
+  <!-- Chat Toggle Script -->
+  <script>
+    (function () {
+      var toggleButton = document.getElementById('chat-toggle');
+      var panel = document.getElementById('chat-panel');
+      var closeButton = document.getElementById('chat-close');
+      var form = document.getElementById('chat-form');
+      var input = document.getElementById('chat-input');
+      var messages = document.getElementById('chat-messages');
+
+      function openPanel() {
+        panel.classList.remove('hidden');
+        // Ensure the input is focused when opening
+        setTimeout(function(){ input && input.focus(); }, 0);
+      }
+
+      function closePanel() {
+        panel.classList.add('hidden');
+      }
+
+      toggleButton.addEventListener('click', function () {
+        if (panel.classList.contains('hidden')) {
+          openPanel();
+        } else {
+          closePanel();
+        }
+      });
+
+      closeButton.addEventListener('click', function () {
+        closePanel();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = (input.value || '').trim();
+        if (!text) return;
+        var bubble = document.createElement('div');
+        bubble.className = 'ml-auto max-w-[80%] bg-[#a38654] text-[#ecd6ab] px-3 py-2 rounded-lg text-sm';
+        bubble.textContent = text;
+        messages.appendChild(bubble);
+        messages.scrollTop = messages.scrollHeight;
+        input.value = '';
+      });
+    })();
+  </script>
+
 
 </body>
 </html>

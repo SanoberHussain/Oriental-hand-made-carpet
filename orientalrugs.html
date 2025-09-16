@@ -11,6 +11,10 @@
     .font-playfair {
       font-family: 'Playfair Display', serif;
     }
+    /* Zoom effect for cards in the rugs grid */
+    #rugsGrid .relative { overflow: hidden; }
+    #rugsGrid img { transition: transform 0.5s ease; }
+    #rugsGrid .relative:hover img { transform: scale(1.2); }
   </style>
 </head>
 <body>
@@ -19,19 +23,41 @@
       <span class="font-playfair text-xl md:text-3xl text-[#ecd6ab] tracking-wider">ORIENTAL</span>
       <span class="uppercase font-semibold text-xs text-[#ecd6ab]">Handmade Carpets</span>
     </div>
-    <div class="flex items-center ml-auto">
-      <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
-        <li><a href="index.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">INTERIOR DESIGNERS</a></li>
-        <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
-      </ul>
-      <button id="viewCollectionsBtn" class="ml-2 md:ml-10 px-3 md:px-4 py-2 rounded font-semibold uppercase text-xs md:text-sm tracking-wider shadow border border-[#ecd6ab] text-[#ecd6ab] hover:bg-[#ecd6ab30] transition">
-        View Collections
-      </button>
-    </div>
+  <!--  content right side push -->
+ <div class="flex items-center ml-auto">
+  <!-- Menu - Hidden on mobile, visible on desktop -->
+  <ul class="hidden lg:flex space-x-6 xl:space-x-10 text-lg items-center">
+    <li><a href="index.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">HOME</a></li>
+    <li><a href="orientalrugs.html" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">COLLECTIONS</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">AREAS COVERED</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">ABOUT</a></li>
+    <li><a href="#" class="hover:text-[#a38654] transition font-bold text-sm xl:text-base">CONTACTS</a></li>
+  </ul>
+  <!-- Icons Section -->
+<div class="flex items-center space-x-6 text-[#ecd6ab] ml-12">
+  <!-- Create Account Logo with Tooltip -->
+  <div class="relative group">
+    <a href="signup.html" target="_blank" class="hover:opacity-80 transition">
+      <img src="assets/icons8-login-24.png" alt="Create Account" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Login
+    </span>
+  </div>
+    <!-- Cart Logo with Tooltip -->
+  <div class="relative group">
+    <a href="#" class="hover:opacity-80 transition">
+      <img src="assets/icons8-cart-64.png" alt="Cart Icon" class="w-7 h-7">
+    </a>
+    <!-- Tooltip Text -->
+    <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs bg-[#ecd6ab] text-[#1a1a1a] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+      Cart
+    </span>
+  </div>
+</div>
+
+</div>
   </nav>
 
   <div class="flex flex-col max-w-[1400px] mx-auto mt-20 md:mt-100 px-4 md:px-6">
@@ -56,22 +82,29 @@
           <p class="text-gray-700 leading-relaxed">
             Our carefully selected patterns of ‘Oriental’ carpets vary widely in size, design, materials, and weave techniques, and include items ranging from floor coverings to decorative pieces.
           </p>
-          <button id="viewCollectionsBtnMobile" class="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-red-800 transition mt-4">View Collections</button>
+          <button id="showCollectionBtn" 
+        class="px-5 py-2.5 bg-black text-white rounded-lg shadow-md transition transform hover:scale-105 hover:bg-red-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-300 active:scale-95">View Collections</button>
         </div>
         <div class="relative flex flex-col sm:flex-row items-center justify-center gap-6">
-          <img src="oriental background removee/oimg2.png" alt="Rug 1" class="w-40 sm:w-52 md:w-60 h-auto rounded-md shadow-lg" />
-          <img src="oriental background removee/oimg6.png" alt="Rug 2" class="w-40 sm:w-52 md:w-60 h-auto rounded-md shadow-lg -mt-6 sm:-mt-12" />
+          <img src="assets/oriental/rug8.png" alt="Rug 1" class="w-40 sm:w-52 md:w-60 h-auto rounded-md shadow-lg" />
+          <img src="assets/oriental/rug5.png" alt="Rug 2" class="w-40 sm:w-52 md:w-60 h-auto rounded-md shadow-lg -mt-6 sm:-mt-12" />
         </div>
       </div>
     </div>
   </div>
 
   <!-- Rugs grid hidden initially -->
-  <div id="rugsGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 p-4 md:p-6 max-w-[1400px] mx-auto" style="display:none; margin-top:2rem;">
+  <div id="rugsGrid" 
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 p-4 md:p-6 max-w-[1400px] mx-auto" 
+  style="display:none; margin-top:2rem;">
+<!-- Yahan aapki rugs collection items aayengi -->
+
+
+   
     <!-- card1 -->
-    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 ">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg1.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rugs1.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4  transform transition duration-800 group-hover:scale-200" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -90,7 +123,7 @@
     <!-- card2 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg3.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug2.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -109,7 +142,7 @@
     <!-- card3 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg2.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug3.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -128,7 +161,7 @@
     <!-- card4 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg4.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug4.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -147,7 +180,7 @@
     <!-- card5 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg5.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug5.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -166,7 +199,7 @@
     <!-- card6 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg6.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug6.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -185,7 +218,7 @@
     <!-- card7 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg7.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug7.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -204,7 +237,7 @@
     <!-- card8 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg8.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug8.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -223,7 +256,7 @@
     <!-- card9 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg9.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug9.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -242,7 +275,7 @@
     <!-- card10 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg10.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug10.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -261,7 +294,7 @@
     <!-- card11 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg11.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug11.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -280,7 +313,7 @@
     <!-- card12 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg12.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug12.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -299,7 +332,7 @@
     <!-- card13 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg13.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug13.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -318,7 +351,223 @@
     <!-- card14 -->
     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
       <div class="relative flex items-center justify-center bg-gray-100">
-        <img src="oriental background removee/oimg2.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+        <img src="assets/oriental/rug14.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card15 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug15.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card16 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug16.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card17 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug17.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card18 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug18.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card19 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug19.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card20 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/ru20.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card21 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug21.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card22 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug22.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card23 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug23.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card24 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug24.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card25 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug25.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
+      </div>
+      <div class="p-3 md:p-4 text-center">
+        <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
+        <p class="text-red-700 font-bold text-sm md:text-md mt-1">$299</p>
+        <div class="flex items-center justify-center mt-2 mb-3 md:mb-4">
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+          <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.489 6.91l6.561-.955L10 0l2.95 5.955 6.561.955-4.755 4.635 1.122 6.545z" /></svg>
+        </div>
+        <button class="w-full bg-black text-white py-2 rounded-md hover:bg-red-800 transition text-sm md:text-base">Add to Cart</button>
+      </div>
+    </div>
+     <!-- card26 -->
+     <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition mt-3 md:mt-5 rug-card">
+      <div class="relative flex items-center justify-center bg-gray-100">
+        <img src="assets/oriental/rug26.png" alt="Abstract Elegance Carpet" class="h-48 md:h-64 w-full object-contain p-2 md:p-4" />
       </div>
       <div class="p-3 md:p-4 text-center">
         <h3 class="text-base md:text-lg font-semibold text-gray-900">Abstract Elegance Carpet</h3>
@@ -373,31 +622,38 @@
   </div>
 </div>
 
-  <script>
-    const viewBtn = document.getElementById('viewCollectionsBtn');
-    const viewBtnMobile = document.getElementById('viewCollectionsBtnMobile');
-    const rugsGrid = document.getElementById('rugsGrid');
 
-    function showRugsGrid() {
-      rugsGrid.style.display = 'grid';
-      rugsGrid.scrollIntoView({ behavior: 'smooth' });
+   <script>
+  document.getElementById("showCollectionBtn").addEventListener("click", function() {
+    const grid = document.getElementById("rugsGrid");
+    if (grid.style.display === "none" || grid.style.display === "") {
+      grid.style.display = "grid"; // show karna hai
+    } else {
+      grid.style.display = "none"; // dobara click karne par hide ho jaye
     }
-
-    viewBtn.addEventListener('click', showRugsGrid);
-    viewBtnMobile.addEventListener('click', showRugsGrid);
-
-    const rugCards = document.querySelectorAll('.rug-card');
-    rugCards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-        card.style.boxShadow = '0 10px 15px rgba(0, 0, 0, 0.3)';
-        card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+  });
+  </script>
+  <script>
+    (function(){
+      // Open product detail when any rug card is clicked
+      var cards = document.querySelectorAll('#rugsGrid .bg-white');
+      cards.forEach(function(card){
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function(){
+          var imgEl = card.querySelector('img');
+          var titleEl = card.querySelector('h3');
+          var priceEl = card.querySelector('p');
+          var productDetails = {
+            imageSrc: imgEl ? imgEl.getAttribute('src') : '',
+            title: titleEl ? titleEl.textContent.trim() : 'Product',
+            price: priceEl ? priceEl.textContent.trim() : '$0',
+            category: 'Oriental'
+          };
+          try { localStorage.setItem('selectedProduct', JSON.stringify(productDetails)); } catch(e) {}
+          window.location.href = 'product.html';
+        });
       });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
-        card.style.boxShadow = '';
-      });
-    });
+    })();
   </script>
 </body>
 </html>
